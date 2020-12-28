@@ -1,0 +1,5 @@
+{
+  "project_name": "Example Project",
+  "project_kebab": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+  "cloudformation_stack_name": "{{ cookiecutter.project_kebab }}"
+}

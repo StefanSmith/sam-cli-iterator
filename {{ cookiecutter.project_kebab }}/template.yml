@@ -1,0 +1,42 @@
+AWSTemplateFormatVersion: 2010-09-09
+Transform: AWS::Serverless-2016-10-31
+
+Globals:
+  Function:
+    Runtime: nodejs12.x
+    MemorySize: 128
+    Timeout: 4
+
+Resources:
+  HelloFunction:
+    Type: AWS::Serverless::Function
+    Metadata:
+      BuildMethod: makefile
+    Properties:
+      AutoPublishAlias: live
+      Handler: src/functions/HelloFunction/index.handler
+      Policies:
+        - AWSLambdaBasicExecutionRole
+      Events:
+        ApiRequest:
+          Type: HttpApi
+          Properties:
+            Method: GET
+            Path: /hello
+  HowdyFunction:
+    Type: AWS::Serverless::Function
+    Metadata:
+      BuildMethod: makefile
+    Properties:
+      Handler: src/functions/HowdyFunction/index.handler
+      Policies:
+        - AWSLambdaBasicExecutionRole
+      Events:
+        ApiRequest:
+          Type: HttpApi
+          Properties:
+            Method: GET
+            Path: /howdy
+Outputs:
+  HelloUrl:
+    Value: !Sub "https://${ServerlessHttpApi}.execute-api.${AWS::Region}.amazonaws.com/hello"

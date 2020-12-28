@@ -1,0 +1,1 @@
+export const additionalGreeting = () => 'How you doing?';
