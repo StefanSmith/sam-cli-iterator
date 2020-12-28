@@ -40,3 +40,5 @@ Resources:
 Outputs:
   HelloUrl:
     Value: !Sub "https://${ServerlessHttpApi}.execute-api.${AWS::Region}.amazonaws.com/hello"
+  HowdyUrl:
+    Value: !Sub "https://${ServerlessHttpApi}.execute-api.${AWS::Region}.amazonaws.com/howdy"

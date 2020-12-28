@@ -21,10 +21,21 @@ This solution is constrained by the following requirements:
 - There should be zero overhead to adding new Lambda functions
 
 ## Quick start
+
+### Deploy stack
 1. Run `make` to install dependencies
 1. Run `make deploy` to deploy stack
-1. To invoke the `HelloFunction` Lambda function, visit the URL provided by the `HelloUrl` CloudFormation stack output 
-1. Make changes to `./src/functions/HelloFunction/additionalGreeting.js` and run `make update alias=live function=HelloFunction` to update the deployed function code
+   
+### Update a single function
+1. Visit the URL provided by the `HowdyUrl` CloudFormation stack output to invoke the `HowdyFunction` Lambda function 
+1. Make changes to `howdy()` in `./src/domain/greetings.js
+1. Run `make update function=HowdyFunction` to update the deployed function code
+1. Refresh your browser to see the changes
+   
+### Update a single function with an alias:
+1. Visit the URL provided by the `HelloUrl` CloudFormation stack output to invoke the `HelloFunction` Lambda function
+1. Make changes to `additionalGreeting()` in `./src/functions/HelloFunction/additionalGreeting.js`
+1. Run `make update alias=live function=HelloFunction` to update the deployed function code
 1. Refresh your browser to see the changes
 
 ## Customizing
