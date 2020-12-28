@@ -1,6 +1,5 @@
 {
-    "name": "replaced-by-user-input",
-    "description": "replaced-by-user-input",
+    "name": "{{ cookiecutter.project_name }}",
     "version": "0.0.1",
     "private": true,
     "devDependencies": {
