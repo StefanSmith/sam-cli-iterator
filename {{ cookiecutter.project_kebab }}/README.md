@@ -28,7 +28,7 @@ This solution is constrained by the following requirements:
    
 ### Update a single function
 1. Visit the URL provided by the `HowdyUrl` CloudFormation stack output to invoke the `HowdyFunction` Lambda function 
-1. Make changes to `howdy()` in `./src/domain/greetings.js
+1. Make changes to `howdy()` in `./src/domain/greetings.js`
 1. Run `make update function=HowdyFunction` to update the deployed function code
 1. Refresh your browser to see the changes
    
